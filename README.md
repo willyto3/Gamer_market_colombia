@@ -21,3 +21,9 @@ Revisamos las migraciones pendientes
 
 Realizamos las migraciones pendientes
 # python manage.py migrate
+
+Iniciamos la primera app Store para manejar los productos
+# python manage.py startapp store
+
+Registramos la app store en gamerMarketColombia en el archivo settings
+# 'store',
