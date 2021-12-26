@@ -27,3 +27,31 @@ Iniciamos la primera app Store para manejar los productos
 
 Registramos la app store en gamerMarketColombia en el archivo settings
 # 'store',
+
+Creamos el superusuario para poder entrar al admin
+# python manage.py createsuperuser
+Usuario: admin Contraseña: admin
+
+Se crea el primer modelo Category en la app Store
+- name
+- slug
+
+Se crea el segundo modelo Product en la app Stored
+- Llave Foranea al modelo Category.
+- la persona que creo el producto created_by, que es una llave foranea del USER
+- nombre del producto name
+- Descripcion del producto description
+- Imagen del producto image
+- slug
+- Precio del Producto price
+- Si se cuenta con Stock in_stock
+- si la publicacion esta Activa is_active
+- Fecha de Creacion de la Publicacion created
+- Fecha de Actualizacion updated
+
+Se instala Pillow en el ambiente para poder manejar imagenes
+# pip install Pillow
+
+Se realizan las migraciones a la base de datos
+
+Se registra el modelo en el admin de la app Store
