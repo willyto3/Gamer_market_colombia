@@ -54,4 +54,11 @@ Se instala Pillow en el ambiente para poder manejar imagenes
 
 Se realizan las migraciones a la base de datos
 
+Configuramos la carpeta para guardar los medios visuales
+- creamos una carpeta llamada media en la raiz del proyecto
+- se incluye estas lineas en el archivo settings
+  # MEDIA_URL = '/media/'
+  # MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+- se importa os, en el archivo settings
+
 Se registra el modelo en el admin de la app Store
