@@ -1,0 +1,7 @@
+{%extends "../base.html"%} {%load static%} {%block title%}Detail{%endblock%}
+{%block content%}
+
+<img class="img-fluid" alt="Responsive image" src="{{product.image.url}}" />
+
+<br />
+{{product.title}} {{product.price}} {%endblock%}
