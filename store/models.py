@@ -1,6 +1,7 @@
-from django.db import models
+
 
 from django.contrib.auth.models import User
+from django.db import models
 
 # Create your models here.
 
@@ -23,7 +24,7 @@ class Product(models.Model):
         Category, related_name='product', on_delete=models.CASCADE)
     created_by = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='product_creator')
-    name = models.CharField(max_length=255, unique=True)
+    title = models.CharField(max_length=255)
     description = models.TextField(blank=True)
     image = models.ImageField(upload_to='images/')
     slug = models.SlugField(max_length=255)
@@ -39,4 +40,4 @@ class Product(models.Model):
         verbose_name_plural = 'Products'
 
     def __init__(self):
-        return self.name
+        return self.title

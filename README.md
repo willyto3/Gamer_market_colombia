@@ -60,5 +60,12 @@ Configuramos la carpeta para guardar los medios visuales
   # MEDIA_URL = '/media/'
   # MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 - se importa os, en el archivo settings
+Se registra en el archivo urls, estas importaciones 
+# from django.conf import settings
+# from django.conf.urls.static import static
 
-Se registra el modelo en el admin de la app Store
+y se incluye estas dos lineas
+# if settings.DEBUG:
+#    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+Se registran los modelos en el admin de la app Store
