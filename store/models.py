@@ -35,9 +35,9 @@ class Product(models.Model):
     updated = models.DateField(auto_now=True)
 
     class Meta:
-        ordering = ('-created',)
+        ordering = ['-created']
         verbose_name = 'Product'
         verbose_name_plural = 'Products'
 
-    def __init__(self):
+    def __str__(self):
         return self.title
