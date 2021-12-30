@@ -25,11 +25,7 @@
         {%for product in products %}
         <div class="col">
           <div class="card shadow-sm">
-            <img
-              class="img-fluid"
-              alt="Responsive image"
-              src="{{product.image.url}}"
-            />
+            <img class="img-fluid" alt="Responsive image" src="{{product.image.url}}" />
 
             <div class="card-body">
               <p class="card-text">{{product.description}}</p>
@@ -42,10 +38,8 @@
                     <input type="submit" value="Shop {{product.title}}" />
                   </form>
                 </div>
-                <small class="text-muted"
-                  >{%if product.in_stock %}In Stock{%else %}Out of
-                  Stock{%endif%}</small
-                >
+                <small class="text-muted">{%if product.in_stock %}In Stock{%else %}Out of
+                  Stock{%endif%}</small>
               </div>
             </div>
           </div>

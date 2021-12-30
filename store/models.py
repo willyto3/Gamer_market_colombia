@@ -5,19 +5,21 @@ from django.urls import reverse
 
 # Create your models here.
 
+
 class ProductManager(models.Manager):
     def get_queryset(self):
         return super(ProductManager, self).get_queryset().filter(is_active=True)
 
+
 class Category(models.Model):
-    name = models.CharField(max_length=255, db_index=True)
+    name = models.CharField(max_length=255, db_index=True,
+                            verbose_name=("Category"), help_text="Name of the category")
     slug = models.SlugField(max_length=255, unique=True)
 
     class Meta:
         ordering = ['name']
         verbose_name = 'Category'
         verbose_name_plural = 'Categories'
-
 
     def get_absolute_url(self):
         return reverse('store:category_list', args=[self.slug])
@@ -41,7 +43,7 @@ class Product(models.Model):
     created = models.DateField(auto_now_add=True)
     updated = models.DateField(auto_now=True)
     objects = models.Manager()
-    products=ProductManager()
+    products = ProductManager()
 
     class Meta:
         ordering = ['-created']
