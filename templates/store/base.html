@@ -47,7 +47,17 @@
             Search
           </button>
         </form>
-        <a type="button" role="button" href="{% url "basket:basket_summary"%}" class="btn-outline-secondary">1
+        <a type="button" role="button" href="{% url "basket:basket_summary"%}" class="btn-outline-secondary">
+          {% with total_qty=basket|length %}
+          <div id= "basket-qty" class="d-inline-flex">
+          {% if total_qty > 0%}
+              {{total_qty}}
+            {%else %}
+              0
+            {% endif %}
+            </div>  
+          {%endwith%}
+
           <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cart2"
             viewBox="0 0 16 16">
             <path
